@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Link Shortener</title>
+    <script>
+      // URL карта: ключ → дестинация
+      const links = {
+        "yt": "https://www.youtube.com/",
+        "fb": "https://www.facebook.com/",
+        "d": "https://ddabnik.net/"
+      };
+
+      const path = location.pathname.slice(1); // премахва /
+      if (links[path]) {
+        location.href = links[path];
+      } else {
+        document.write("Няма такъв линк: " + path);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
