@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Link Shortener</title>
+    <script>
+      const links = {
+        "yt": "https://www.youtube.com/",
+        "fb": "https://www.facebook.com/",
+        "d": "https://ddabnik.net/",
+        "novini": "https://ddabnik.net/category/news/"
+      };
+
+      const path = location.pathname.slice(1);
+      if (links[path]) {
+        location.href = links[path];
+      } else {
+        document.write("Няма такъв линк: " + path);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
