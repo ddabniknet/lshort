@@ -2,9 +2,8 @@
 <html lang="bg">
 <head>
   <meta charset="UTF-8" />
-  <title>Линкът не съществува – l.ddabnik.net</title>
+  <title>Няма такъв линк – l.ddabnik.net</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="refresh" content="5; url=https://l.ddabnik.net/" />
   <style>
     body {
       margin: 0;
@@ -32,11 +31,37 @@
       color: #b3a78c;
       font-size: 1.1rem;
     }
+    a {
+      color: #d4c2a3;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <img src="LogoTransparent.png" alt="Лого Д.Дъбник.НЕТ" class="logo" />
-  <h1>Няма такъв линк</h1>
-  <p>След 5 секунди ще бъдете върнати към <a href="https://l.ddabnik.net/">началната страница</a>.</p>
+  <h1 id="status">Зареждане...</h1>
+  <p id="desc">Моля, изчакайте.</p>
+
+  <script>
+    const path = location.pathname.slice(1);
+
+    fetch("links.json")
+      .then((res) => res.json())
+      .then((links) => {
+        if (links[path]) {
+          window.location.href = links[path];
+        } else {
+          document.getElementById("status").innerText = "Няма такъв линк";
+          document.getElementById("desc").innerHTML = 'След 5 секунди ще бъдете върнати към <a href="/">началната страница</a>.';
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 5000);
+        }
+      })
+      .catch((err) => {
+        document.getElementById("status").innerText = "Грешка при зареждане";
+        document.getElementById("desc").innerText = "Неуспешно четене на links.json.";
+      });
+  </script>
 </body>
 </html>
