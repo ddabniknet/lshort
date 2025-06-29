@@ -1,6 +1,7 @@
 {
-  "yt": "https://www.youtube.com/",
-  "fb": "https://www.facebook.com/",
-  "d": "https://ddabnik.net/",
-  "novini": "https://ddabnik.net/category/news/"
+  "yt": "https://www.youtube.com/@ddabniknet",
+  "fb": "https://www.facebook.com/ddabnikNET",
+  "about": "https://about.ddabnik.net/",
+  "signali": "https://www.ddabnik.net/newssend",
+  "dolnidabnik": "https://www.ddabnik.net/search/label/%D0%B3%D1%80.%D0%94%D0%BE%D0%BB%D0%BD%D0%B8%D0%94%D1%8A%D0%B1%D0%BD%D0%B8%D0%BA"
 }
